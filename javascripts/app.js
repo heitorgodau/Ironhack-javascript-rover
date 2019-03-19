@@ -3,7 +3,8 @@
 let rover = {
   direction: "N",
   positionX: 0,
-  positionY: 0
+  positionY: 0,
+  travelLog: []
 }
 // ======================
 function turnLeft(rover){
@@ -58,6 +59,8 @@ function moveForward(rover){
       rover.positionX -= 1;
       return rover.positionX + ", " + rover.positionY;
   }
+  
+  console.log(rover.travelLog)
 }
 
 function command (string){
@@ -76,7 +79,8 @@ function command (string){
       default:
         console.log("Use 'f' to move Foward, 'l' to turn left or 'r' to turn right. Only this letters")
     }
-    //console.log(commands[i])
   }
-  console.log("position: " + rover.positionX + ", " + rover.positionY);
+  rover.travelLog.push(rover.positionX,rover.positionY);
+  //console.log("position: " + rover.positionX + ", " + rover.positionY);
+  console.log(rover.travelLog)
 }
