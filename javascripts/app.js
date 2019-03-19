@@ -1,7 +1,5 @@
 // Rover Object Goes Here
 // ======================
-
-
 let rover = {
   direction: "N",
   positionX: 0,
@@ -60,4 +58,25 @@ function moveForward(rover){
       rover.positionX -= 1;
       return rover.positionX + ", " + rover.positionY;
   }
+}
+
+function command (string){
+  let commands = string;
+  for(let i = 0; i < commands.length; i++){
+    switch (commands[i]) {
+      case "f":
+        moveForward(rover);
+        break;
+      case "l":
+        turnLeft(rover);
+        break;
+      case "r":
+        turnRight(rover);
+        break;
+      default:
+        console.log("Use 'f' to move Foward, 'l' to turn left or 'r' to turn right. Only this letters")
+    }
+    //console.log(commands[i])
+  }
+  console.log(rover.positionX + ", " + rover.positionY);
 }
