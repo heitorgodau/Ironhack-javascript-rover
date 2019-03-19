@@ -78,5 +78,5 @@ function command (string){
     }
     //console.log(commands[i])
   }
-  console.log(rover.positionX + ", " + rover.positionY);
+  console.log("position: " + rover.positionX + ", " + rover.positionY);
 }
